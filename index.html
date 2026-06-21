@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Business Case EVA Seguros — Centro de Ventas DKV Famedic operado desde Venezuela.">
+<title>Business Case · EVA Seguros — DKV Famedic</title>
+<style>
+  :root{
+    --bg:#0c1222;
+    --bg-soft:#111a30;
+    --card:#16213e;
+    --card-2:#1b2748;
+    --line:#26345c;
+    --txt:#e8edf7;
+    --muted:#9bb0d4;
+    --brand:#5b8def;
+    --brand-2:#7c5cff;
+    --accent:#22c79a;
+    --warn:#ffb020;
+    --danger:#ff6b6b;
+    --shadow:0 14px 40px rgba(0,0,0,.35);
+    --radius:18px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:radial-gradient(1200px 600px at 80% -10%,#1b2a55 0%,transparent 60%),
+               radial-gradient(900px 500px at -10% 10%,#241a52 0%,transparent 55%),
+               var(--bg);
+    color:var(--txt);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--brand)}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+
+  /* HEADER */
+  header.hero{
+    padding:88px 0 56px;
+    border-bottom:1px solid var(--line);
+    position:relative;
+    overflow:hidden;
+  }
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--brand);font-weight:700;
+    background:rgba(91,141,239,.12);
+    border:1px solid rgba(91,141,239,.3);
+    padding:6px 14px;border-radius:999px;margin-bottom:22px;
+  }
+  h1{
+    font-size:clamp(2rem,5vw,3.4rem);
+    line-height:1.1;margin:0 0 14px;
+    background:linear-gradient(90deg,#fff,#9bb0d4);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    font-weight:800;letter-spacing:-.02em;
+  }
+  .subtitle{font-size:clamp(1.05rem,2.5vw,1.4rem);color:var(--muted);max-width:760px;margin:0 0 30px}
+  .hero-stats{display:flex;flex-wrap:wrap;gap:14px;margin-top:8px}
+  .stat{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:16px 20px;min-width:150px;flex:1 1 150px;
+  }
+  .stat .v{font-size:1.5rem;font-weight:800;color:#fff}
+  .stat .l{font-size:.82rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+
+  /* DISCLAIMER */
+  .disclaimer{
+    margin:30px 0 0;
+    background:linear-gradient(180deg,rgba(255,176,32,.14),rgba(255,176,32,.06));
+    border:1px solid rgba(255,176,32,.45);
+    border-left:5px solid var(--warn);
+    border-radius:14px;padding:18px 22px;
+  }
+  .disclaimer strong{color:var(--warn)}
+  .disclaimer .t{font-weight:800;color:var(--warn);display:flex;align-items:center;gap:8px;margin-bottom:6px}
+  .disclaimer p{margin:0;color:#f2e6c9;font-size:.95rem}
+
+  /* NAV */
+  nav.toc{
+    position:sticky;top:0;z-index:20;
+    background:rgba(12,18,34,.82);backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);
+    padding:12px 0;
+  }
+  nav.toc .wrap{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+  nav.toc .wrap::-webkit-scrollbar{display:none}
+  nav.toc a{
+    white-space:nowrap;color:var(--muted);text-decoration:none;
+    font-size:.86rem;font-weight:600;padding:7px 14px;border-radius:999px;
+    border:1px solid transparent;transition:.18s;
+  }
+  nav.toc a:hover{color:#fff;background:var(--card);border-color:var(--line)}
+
+  /* SECTIONS */
+  section{padding:52px 0;border-bottom:1px solid var(--line)}
+  section:last-of-type{border-bottom:none}
+  .sec-num{
+    font-size:.8rem;font-weight:800;letter-spacing:.1em;color:var(--brand-2);
+    text-transform:uppercase;margin-bottom:6px;
+  }
+  h2{font-size:clamp(1.5rem,3.5vw,2.1rem);margin:0 0 8px;font-weight:800;letter-spacing:-.01em}
+  h3{font-size:1.18rem;margin:30px 0 10px;color:#fff;font-weight:700}
+  p{color:#d7e0f3}
+  .lead{color:var(--muted);font-size:1.05rem;max-width:820px}
+  blockquote{
+    margin:18px 0;padding:14px 20px;border-left:4px solid var(--brand);
+    background:var(--card);border-radius:0 12px 12px 0;color:var(--muted);font-style:italic;
+  }
+  ul.clean{list-style:none;padding:0;margin:16px 0}
+  ul.clean li{
+    padding:10px 0 10px 30px;position:relative;border-bottom:1px solid rgba(38,52,92,.5);color:#d7e0f3;
+  }
+  ul.clean li:last-child{border-bottom:none}
+  ul.clean li::before{
+    content:"";position:absolute;left:4px;top:18px;width:8px;height:8px;border-radius:50%;
+    background:linear-gradient(135deg,var(--brand),var(--brand-2));
+  }
+
+  /* CARDS GRID */
+  .grid{display:grid;gap:16px;margin:18px 0}
+  .grid.c2{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+  .grid.c3{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+  .grid.c4{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+  .card{
+    background:linear-gradient(180deg,var(--card),var(--bg-soft));
+    border:1px solid var(--line);border-radius:var(--radius);padding:20px;
+    transition:.2s;
+  }
+  .card:hover{transform:translateY(-3px);border-color:var(--brand);box-shadow:var(--shadow)}
+  .card h4{margin:0 0 6px;font-size:1.02rem;color:#fff}
+  .card p{margin:0;color:var(--muted);font-size:.92rem}
+  .card .big{font-size:1.8rem;font-weight:800;color:#fff;display:block;margin-bottom:2px}
+  .card .lbl{font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+
+  /* TABLES */
+  .table-wrap{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:14px}
+  table{border-collapse:collapse;width:100%;min-width:520px;font-size:.92rem}
+  thead th{
+    background:var(--card-2);color:#fff;text-align:left;padding:13px 16px;
+    font-weight:700;font-size:.82rem;text-transform:uppercase;letter-spacing:.04em;
+    border-bottom:2px solid var(--brand);
+  }
+  tbody td{padding:12px 16px;border-bottom:1px solid rgba(38,52,92,.6);color:#d7e0f3}
+  tbody tr:hover{background:rgba(91,141,239,.06)}
+  tbody tr:last-child td{border-bottom:none}
+  tr.total td{background:rgba(34,199,154,.1);font-weight:800;color:#fff}
+  tr.subhead td{background:rgba(91,141,239,.08);font-weight:700;color:#fff}
+  td.sub{padding-left:28px;color:var(--muted)}
+  .pos{color:var(--accent);font-weight:700}
+  .neg{color:var(--danger);font-weight:700}
+  .num{text-align:right;font-variant-numeric:tabular-nums}
+
+  /* TIMELINE */
+  .timeline{display:grid;gap:14px;margin:20px 0}
+  .phase{
+    display:flex;gap:16px;align-items:flex-start;
+    background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;
+  }
+  .phase .badge{
+    flex:0 0 auto;width:44px;height:44px;border-radius:12px;
+    background:linear-gradient(135deg,var(--brand),var(--brand-2));
+    display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:1.1rem;
+  }
+  .phase .body h4{margin:0 0 2px;color:#fff}
+  .phase .body p{margin:0;color:var(--muted);font-size:.9rem}
+  .phase .when{margin-left:auto;color:var(--brand);font-weight:700;font-size:.85rem;white-space:nowrap}
+
+  /* FOOTER */
+  footer{padding:46px 0;color:var(--muted);font-size:.9rem}
+  .final-note{
+    background:linear-gradient(180deg,rgba(255,176,32,.12),rgba(255,176,32,.05));
+    border:1px solid rgba(255,176,32,.4);border-radius:14px;padding:18px 22px;margin-bottom:28px;
+  }
+  .final-note strong{color:var(--warn)}
+  .foot-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;border-top:1px solid var(--line);padding-top:22px}
+  .tag{display:inline-block;background:var(--card);border:1px solid var(--line);padding:4px 12px;border-radius:999px;font-size:.8rem;margin:2px}
+
+  @media (max-width:640px){
+    header.hero{padding:56px 0 40px}
+    .phase{flex-wrap:wrap}.phase .when{margin-left:0}
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">● Business Case · 2026</span>
+    <h1>Centro de Ventas Especializado en DKV Famedic</h1>
+    <p class="subtitle">Operación telefónica de alto rendimiento para EVA Seguros, gestionada desde Venezuela. Modelo escalable, tecnificado y replicable a toda la cartera.</p>
+
+    <div class="hero-stats">
+      <div class="stat"><div class="v">45.000 €</div><div class="l">Inversión inicial</div></div>
+      <div class="stat"><div class="v">7,5 meses</div><div class="l">Payback</div></div>
+      <div class="stat"><div class="v">&gt;235.000 €</div><div class="l">Beneficio año 2</div></div>
+      <div class="stat"><div class="v">65 %</div><div class="l">Comisión por póliza</div></div>
+    </div>
+
+    <div class="disclaimer">
+      <div class="t">⚠️ Aviso importante — Alcance del documento</div>
+      <p>Este Business Case ha sido elaborado <strong>SIN conocimiento del estado actual real de EVA Seguros</strong>. Toda la información relativa a la compañía procede de fuentes públicas y/o supuestos, y <strong>no ha sido contrastada con datos internos, financieros ni operativos actualizados</strong>. Las proyecciones, métricas y conclusiones son estimaciones de partida sujetas a validación una vez se disponga de información directa y verificada.</p>
+    </div>
+  </div>
+</header>
+
+<!-- TOC -->
+<nav class="toc">
+  <div class="wrap">
+    <a href="#contexto">1 · Contexto</a>
+    <a href="#alcance">2 · Alcance</a>
+    <a href="#mercado">3 · Mercado</a>
+    <a href="#gasto">4 · Plan de gasto</a>
+    <a href="#ventas">5 · Ventas</a>
+    <a href="#caja">6 · Flujo de caja</a>
+    <a href="#metricas">7 · Métricas</a>
+    <a href="#alineacion">8 · Alineación</a>
+    <a href="#conclusion">9 · Conclusión</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <!-- 1. CONTEXTO -->
+  <section id="contexto">
+    <div class="sec-num">Sección 01</div>
+    <h2>Contexto: EVA Seguros y su modelo de negocio</h2>
+
+    <h3>1.1 · Origen y visión</h3>
+    <p class="lead">EVA Seguros fue fundada en 2023 por Antonio Vila, experto en transformación digital y estrategias omnicanal. En un periodo excepcionalmente corto se ha consolidado como uno de los proyectos más innovadores y de mayor crecimiento del sector asegurador en España, posicionándose como <em>"el primer ecosistema global de comparadores de seguros"</em> con presencia en 17 idiomas.</p>
+
+    <h3>1.2 · Expansión internacional</h3>
+    <p>Más de 100 empleos creados en tres países y una red de 100 agentes externos. Mercados anunciados:</p>
+    <div class="grid c3">
+      <div class="card"><h4>🇮🇹 Italia</h4><p>Próximo inicio de actividad</p></div>
+      <div class="card"><h4>🇲🇽 México</h4><p>Próximo inicio de actividad</p></div>
+      <div class="card"><h4>🇷🇴 Rumanía</h4><p>Foco estratégico</p></div>
+      <div class="card"><h4>🇬🇧 Inglaterra</h4><p>Foco estratégico</p></div>
+      <div class="card"><h4>🌍 Asia y África</h4><p>Regiones clave de expansión</p></div>
+    </div>
+
+    <h3>1.3 · Ecosistema de marcas</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Marca / Servicio</th><th>Área de negocio</th></tr></thead>
+        <tbody>
+          <tr><td>Eva Móvil</td><td>Telefonía móvil</td></tr>
+          <tr><td>Eva Salud</td><td>Salud y servicios médicos digitales</td></tr>
+          <tr><td>Eva Luz</td><td>Energía</td></tr>
+          <tr><td>Hipotecas</td><td>Comparadores hipotecarios regionales e internacionales</td></tr>
+          <tr><td>Seguros de decesos</td><td>Red de comparadores multilingües con IA</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Futuros desarrollos: <strong>Eva Viajes</strong>, <strong>Eva Energía</strong> y <strong>Eva Remesas</strong>.</p>
+
+    <h3>1.4 · Estrategia multicultural</h3>
+    <p>Comparadores especializados para residentes extranjeros en España:</p>
+    <p>
+      <span class="tag">segurodedecesos.com · castellano</span>
+      <span class="tag">assegurancadedecessos.cat · catalán</span>
+      <span class="tag">heriotzaasegurua.eus · euskera</span>
+      <span class="tag">segurodemorte.gal · gallego</span>
+      <span class="tag">taminaljanazah.com · árabe</span>
+      <span class="tag">segurongbuhay.com · tagalo</span>
+    </p>
+    <p>Además, iniciativas específicas para la comunidad colombiana en España (comparador de repatriación y blog informativo).</p>
+
+    <h3>1.5 · Apuesta tecnológica</h3>
+    <div class="grid c4">
+      <div class="card"><h4>Comparador.AI</h4><p>Motor tecnológico de la estructura comercial</p></div>
+      <div class="card"><h4>ChatBot con IA</h4><p>Asesoramiento personalizado en 17 idiomas</p></div>
+      <div class="card"><h4>CRM avanzado</h4><p>Gestión de clientes y leads</p></div>
+      <div class="card"><h4>Análisis de datos</h4><p>Optimización del rendimiento</p></div>
+    </div>
+    <p>Equipo de 12 profesionales: matemáticos, científicos de datos e ingenieros front-end y back-end.</p>
+
+    <h3>1.6 · Filosofía de negocio</h3>
+    <p>Según David Ruiz, director comercial nacional, cuatro factores explican el crecimiento:</p>
+    <ul class="clean">
+      <li><strong>Claridad estratégica</strong> — qué lograr, a qué segmento y con qué propuesta de valor única.</li>
+      <li><strong>Arquitectura organizativa flexible y escalable</strong> — adaptable a mercado, productos y geografía.</li>
+      <li><strong>Tecnología como habilitador</strong> — CRM, análisis de datos y formación online.</li>
+      <li><strong>Talento humano</strong> — "una estrategia brillante sin el equipo adecuado no llega a buen puerto".</li>
+    </ul>
+    <blockquote>"No se buscan solo auxiliares externos que cumplan un número, sino empresarios autónomos con visión a largo plazo." — David Ruiz</blockquote>
+
+    <h3>1.7 · Responsabilidad Social Corporativa</h3>
+    <p>RSC como pilar fundamental: colaboración con <strong>'Plant For The Planet'</strong> para plantar un millón de árboles antes de 2030, conectando a cada cliente con un impacto positivo en el planeta.</p>
+  </section>
+
+  <!-- 2. ALCANCE -->
+  <section id="alcance">
+    <div class="sec-num">Sección 02</div>
+    <h2>Alcance del Business Case</h2>
+    <p class="lead">Foco inicial exclusivo en la comercialización telefónica de <strong>DKV Famedic (Profesional y Plus)</strong>, operada desde Venezuela con una estructura de centro de ventas especializado.</p>
+
+    <div class="grid c3">
+      <div class="card"><h4>Conocimiento del producto</h4><p>Expertise en coberturas, argumentarios y gestión de objeciones de DKV Famedic.</p></div>
+      <div class="card"><h4>Producto validado</h4><p>Seguro de salud familiar sin importar edad ni estado de salud. Comisión del 65 %.</p></div>
+      <div class="card"><h4>Modelo escalable</h4><p>Estructura operativa replicable al resto de la cartera de EVA Seguros.</p></div>
+    </div>
+
+    <h3>2.2 · Productos DKV Famedic</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Producto</th><th class="num">Cuota mensual</th><th class="num">Prima anual</th><th class="num">Comisión</th><th class="num">Ingreso por venta</th></tr></thead>
+        <tbody>
+          <tr><td>Famedic Profesional</td><td class="num">35,50 €</td><td class="num">426 €</td><td class="num">65 %</td><td class="num">276,90 €</td></tr>
+          <tr><td>Famedic Plus</td><td class="num">25,50 €</td><td class="num">306 €</td><td class="num">65 %</td><td class="num">198,90 €</td></tr>
+          <tr class="total"><td>Mix 70/30 · Ingreso medio ponderado</td><td class="num" colspan="4">253,50 €</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>2.3 · Plan de expansión posterior</h3>
+    <div class="timeline">
+      <div class="phase"><div class="badge">1</div><div class="body"><h4>DKV Famedic (Profesional + Plus)</h4><p>Consolidación del producto base</p></div><div class="when">Meses 1-6</div></div>
+      <div class="phase"><div class="badge">2</div><div class="body"><h4>Seguro de Decesos (EVA Seguros)</h4><p>Primera ampliación de cartera</p></div><div class="when">Meses 7-9</div></div>
+      <div class="phase"><div class="badge">3</div><div class="body"><h4>Resto de seguros de salud DKV</h4><p>Profundización en salud</p></div><div class="when">Meses 10-12</div></div>
+      <div class="phase"><div class="badge">4</div><div class="body"><h4>Eva Móvil, Eva Luz, hipotecas</h4><p>Diversificación total</p></div><div class="when">Año 2</div></div>
+    </div>
+  </section>
+
+  <!-- 3. MERCADO -->
+  <section id="mercado">
+    <div class="sec-num">Sección 03</div>
+    <h2>Oportunidad de mercado</h2>
+    <p class="lead">El mercado español presenta factores estructurales que favorecen la demanda de productos como DKV Famedic.</p>
+    <div class="grid c2">
+      <div class="card"><h4>👵 Envejecimiento de la población</h4><p>DKV permite contratar sin importar edad ni estado de salud.</p></div>
+      <div class="card"><h4>🏥 Saturación del sistema público</h4><p>Creciente interés por la sanidad privada como complemento.</p></div>
+      <div class="card"><h4>💶 Entrada de bajo coste</h4><p>DKV Famedic Plus desde 25,50 €/mes.</p></div>
+      <div class="card"><h4>🦷 Cobertura dental incluida</h4><p>47 tratamientos gratuitos y especialidades con descuento.</p></div>
+      <div class="card"><h4>✅ Sin declaración de salud previa</h4><p>Facilita la contratación telefónica.</p></div>
+      <div class="card"><h4>🌐 Posicionamiento EVA</h4><p>Ecosistema multilingüe y apuesta tecnológica.</p></div>
+    </div>
+  </section>
+
+  <!-- 4. GASTO -->
+  <section id="gasto">
+    <div class="sec-num">Sección 04</div>
+    <h2>Plan de gasto detallado</h2>
+
+    <h3>4.1 · Inversión inicial (Mes 0)</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Concepto</th><th>Detalle</th><th class="num">Importe</th></tr></thead>
+        <tbody>
+          <tr><td>Oficina</td><td>Alquiler 500 €/mes (4 meses + 2 garantía)</td><td class="num">3.000 €</td></tr>
+          <tr><td>Equipamiento</td><td>12 PC + monitores + headsets + mobiliario</td><td class="num">11.880 €</td></tr>
+          <tr><td>Infraestructura técnica</td><td>Instalación eléctrica, cableado, montaje</td><td class="num">1.000 €</td></tr>
+          <tr><td>Climatización</td><td>Aire acondicionado (oficina tropical)</td><td class="num">2.000 €</td></tr>
+          <tr><td>Respaldo energético</td><td>Generador + estabilizadores</td><td class="num">1.750 €</td></tr>
+          <tr><td>Capital de trabajo</td><td>4 meses de gastos operativos</td><td class="num">20.000 €</td></tr>
+          <tr><td>Reserva de contingencia</td><td>Imprevistos</td><td class="num">5.370 €</td></tr>
+          <tr class="total"><td colspan="2">TOTAL INVERSIÓN INICIAL</td><td class="num">45.000 €</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>4.2 · Gastos operativos mensuales</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Concepto</th><th class="num">Importe</th><th class="num">% sobre total</th></tr></thead>
+        <tbody>
+          <tr class="subhead"><td>Personal</td><td class="num">3.348 €</td><td class="num">40,8 %</td></tr>
+          <tr><td class="sub">Asesores (10 × 250 USD)</td><td class="num">2.174 €</td><td class="num">—</td></tr>
+          <tr><td class="sub">Supervisor</td><td class="num">391 €</td><td class="num">—</td></tr>
+          <tr><td class="sub">Backoffice</td><td class="num">261 €</td><td class="num">—</td></tr>
+          <tr><td class="sub">Gestor Google Ads (externo)</td><td class="num">522 €</td><td class="num">—</td></tr>
+          <tr class="subhead"><td>Marketing</td><td class="num">3.300 €</td><td class="num">40,2 %</td></tr>
+          <tr><td class="sub">Google Ads</td><td class="num">2.200 €</td><td class="num">—</td></tr>
+          <tr><td class="sub">Gestor Google Ads</td><td class="num">600 €</td><td class="num">—</td></tr>
+          <tr><td class="sub">Bases de datos frías</td><td class="num">500 €</td><td class="num">—</td></tr>
+          <tr class="subhead"><td>Operación</td><td class="num">1.550 €</td><td class="num">19,0 %</td></tr>
+          <tr><td class="sub">Electricidad</td><td class="num">200 €</td><td class="num">—</td></tr>
+          <tr><td class="sub">Internet</td><td class="num">150 €</td><td class="num">—</td></tr>
+          <tr><td class="sub">Telefonía IP</td><td class="num">600 €</td><td class="num">—</td></tr>
+          <tr><td class="sub">Administración</td><td class="num">300 €</td><td class="num">—</td></tr>
+          <tr><td class="sub">Contingencias</td><td class="num">300 €</td><td class="num">—</td></tr>
+          <tr class="total"><td>TOTAL GASTO FIJO MENSUAL</td><td class="num">8.198 €</td><td class="num">100 %</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="lead">El gasto fijo mensual de <strong>8.198 €</strong> se mantiene constante durante los meses 1-12.</p>
+  </section>
+
+  <!-- 5. VENTAS -->
+  <section id="ventas">
+    <div class="sec-num">Sección 05</div>
+    <h2>Proyección de ventas e ingresos</h2>
+    <p class="lead">Crecimiento sostenido de +10 ventas/mes. Ingresos netos calculados tras un 20 % de anulaciones (202,80 €/venta neta).</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Mes</th><th class="num">Ventas</th><th class="num">Crecimiento</th><th class="num">Ingreso Neto</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td class="num">10</td><td class="num">—</td><td class="num">2.028 €</td></tr>
+          <tr><td>2</td><td class="num">20</td><td class="num">+10</td><td class="num">4.056 €</td></tr>
+          <tr><td>3</td><td class="num">30</td><td class="num">+10</td><td class="num">6.084 €</td></tr>
+          <tr><td>4</td><td class="num">40</td><td class="num">+10</td><td class="num">8.112 €</td></tr>
+          <tr><td>5</td><td class="num">50</td><td class="num">+10</td><td class="num">10.140 €</td></tr>
+          <tr><td>6</td><td class="num">60</td><td class="num">+10</td><td class="num">12.168 €</td></tr>
+          <tr><td>7</td><td class="num">70</td><td class="num">+10</td><td class="num">14.196 €</td></tr>
+          <tr><td>8</td><td class="num">80</td><td class="num">+10</td><td class="num">16.224 €</td></tr>
+          <tr><td>9</td><td class="num">90</td><td class="num">+10</td><td class="num">18.252 €</td></tr>
+          <tr><td>10</td><td class="num">100</td><td class="num">+10</td><td class="num">20.280 €</td></tr>
+          <tr><td>11</td><td class="num">110</td><td class="num">+10</td><td class="num">22.308 €</td></tr>
+          <tr class="total"><td>12</td><td class="num">120</td><td class="num">+10</td><td class="num">24.336 €</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 6. CAJA -->
+  <section id="caja">
+    <div class="sec-num">Sección 06</div>
+    <h2>Flujo de caja mensual</h2>
+    <p class="lead">El punto de equilibrio se alcanza entre el mes 4 y 5; la tesorería nunca baja de 32.000 € gracias a la reserva inicial.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Mes</th><th class="num">Ingresos</th><th class="num">Gastos</th><th class="num">Beneficio mensual</th><th class="num">Acumulado</th><th class="num">Tesorería</th></tr></thead>
+        <tbody>
+          <tr><td>0</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">45.000 €</td></tr>
+          <tr><td>1</td><td class="num">2.028 €</td><td class="num">8.198 €</td><td class="num neg">-6.170 €</td><td class="num neg">-6.170 €</td><td class="num">38.830 €</td></tr>
+          <tr><td>2</td><td class="num">4.056 €</td><td class="num">8.198 €</td><td class="num neg">-4.142 €</td><td class="num neg">-10.312 €</td><td class="num">34.688 €</td></tr>
+          <tr><td>3</td><td class="num">6.084 €</td><td class="num">8.198 €</td><td class="num neg">-2.114 €</td><td class="num neg">-12.426 €</td><td class="num">32.574 €</td></tr>
+          <tr><td>4</td><td class="num">8.112 €</td><td class="num">8.198 €</td><td class="num neg">-86 €</td><td class="num neg">-12.512 €</td><td class="num">32.488 €</td></tr>
+          <tr><td>5</td><td class="num">10.140 €</td><td class="num">8.198 €</td><td class="num pos">+1.942 €</td><td class="num neg">-10.570 €</td><td class="num">34.430 €</td></tr>
+          <tr><td>6</td><td class="num">12.168 €</td><td class="num">8.198 €</td><td class="num pos">+3.970 €</td><td class="num neg">-6.600 €</td><td class="num">38.400 €</td></tr>
+          <tr><td>7</td><td class="num">14.196 €</td><td class="num">8.198 €</td><td class="num pos">+5.998 €</td><td class="num neg">-602 €</td><td class="num">44.398 €</td></tr>
+          <tr><td>8</td><td class="num">16.224 €</td><td class="num">8.198 €</td><td class="num pos">+8.026 €</td><td class="num pos">+7.424 €</td><td class="num">52.424 €</td></tr>
+          <tr><td>9</td><td class="num">18.252 €</td><td class="num">8.198 €</td><td class="num pos">+10.054 €</td><td class="num pos">+17.478 €</td><td class="num">62.478 €</td></tr>
+          <tr><td>10</td><td class="num">20.280 €</td><td class="num">8.198 €</td><td class="num pos">+12.082 €</td><td class="num pos">+29.560 €</td><td class="num">74.560 €</td></tr>
+          <tr><td>11</td><td class="num">22.308 €</td><td class="num">8.198 €</td><td class="num pos">+14.110 €</td><td class="num pos">+43.670 €</td><td class="num">88.670 €</td></tr>
+          <tr class="total"><td>12</td><td class="num">24.336 €</td><td class="num">8.198 €</td><td class="num pos">+16.138 €</td><td class="num pos">+59.808 €</td><td class="num">104.808 €</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 7. MÉTRICAS -->
+  <section id="metricas">
+    <div class="sec-num">Sección 07</div>
+    <h2>Métricas financieras clave</h2>
+    <div class="grid c3">
+      <div class="card"><span class="big">45.000 €</span><span class="lbl">Inversión inicial</span></div>
+      <div class="card"><span class="big">41 ventas/mes</span><span class="lbl">Punto de equilibrio (mes 4-5)</span></div>
+      <div class="card"><span class="big">7,5 meses</span><span class="lbl">Payback simple</span></div>
+      <div class="card"><span class="big">14.808 €</span><span class="lbl">Beneficio año 1</span></div>
+      <div class="card"><span class="big">235.040 €</span><span class="lbl">Beneficio año 2 (proyectado)</span></div>
+      <div class="card"><span class="big">277.224 €</span><span class="lbl">Ahorro vs España / año</span></div>
+    </div>
+  </section>
+
+  <!-- 8. ALINEACIÓN -->
+  <section id="alineacion">
+    <div class="sec-num">Sección 08</div>
+    <h2>Alineación con EVA Seguros</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Valor / Principio de EVA Seguros</th><th>Alineación del proyecto</th></tr></thead>
+        <tbody>
+          <tr><td>Tecnología como habilitador</td><td>CRM + telefonía IP + reporting en tiempo real</td></tr>
+          <tr><td>Talento humano como clave</td><td>Equipo comercial especializado con formación continua</td></tr>
+          <tr><td>Flexibilidad y escalabilidad</td><td>Modelo escalable: 10 → 20 → 50 asesores</td></tr>
+          <tr><td>Cultura de colaboración</td><td>Integración con la cartera de productos EVA</td></tr>
+          <tr><td>Sensibilidad multicultural</td><td>Equipo en Venezuela con conocimiento del mercado español</td></tr>
+          <tr><td>Visión global</td><td>Plataforma para futura expansión a otros países</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <blockquote>"La tecnología no solo automatiza procesos, sino que empodera a los equipos." — David Ruiz</blockquote>
+  </section>
+
+  <!-- 9. CONCLUSIÓN -->
+  <section id="conclusion">
+    <div class="sec-num">Sección 09</div>
+    <h2>Conclusión</h2>
+    <p class="lead">El proyecto <strong>Centro de Ventas DKV Famedic operado desde Venezuela</strong> representa una oportunidad de crecimiento estratégico para EVA Seguros, alineándose con:</p>
+    <ul class="clean">
+      <li>La estrategia de expansión multicanal de la compañía.</li>
+      <li>La apuesta por tecnología + talento humano como motor de crecimiento.</li>
+      <li>La diversificación de canales de venta para maximizar la penetración de mercado.</li>
+      <li>El modelo de "socios estratégicos" con una estructura comercial externalizada de alto rendimiento.</li>
+    </ul>
+    <div class="grid c3">
+      <div class="card"><span class="big">45.000 €</span><span class="lbl">Inversión solicitada</span></div>
+      <div class="card"><span class="big">7,5 meses</span><span class="lbl">Payback</span></div>
+      <div class="card"><span class="big">&gt;235.000 €</span><span class="lbl">Beneficio año 2</span></div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="final-note">
+      <strong>⚠️ Nota final:</strong> este documento ha sido elaborado <strong>sin conocimiento del estado actual de EVA Seguros</strong>. Todas las cifras, supuestos y proyecciones deben validarse con información interna, financiera y operativa real de la compañía antes de tomar cualquier decisión de inversión.
+    </div>
+    <div class="foot-row">
+      <div>Business Case · EVA Seguros — DKV Famedic</div>
+      <div>Documento confidencial · 2026</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
