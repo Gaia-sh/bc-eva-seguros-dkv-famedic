@@ -324,8 +324,9 @@
   <section id="ventas">
     <div class="sec-num">Sección 04</div>
     <h2>Proyección de ventas e ingresos</h2>
+    <p class="lead"><strong>Las cifras de esta sección son números reales y realistas</strong>, calculados con supuestos conservadores de mercado. Constituyen el <strong>Escenario Realista (base)</strong> sobre el que se construye el caso; en la Sección 6 se añade un <strong>Escenario Favorable con crecimiento</strong>.</p>
 
-    <h3>4.1 · Supuestos del modelo</h3>
+    <h3>4.1 · Supuestos del modelo (escenario realista)</h3>
     <div class="grid c3">
       <div class="card"><h4>Rampa realista desde cero</h4><p>Arranque lento por contratación y formación, con meseta a ~8 ventas/asesor/mes (capacidad del equipo de 10 asesores).</p></div>
       <div class="card"><h4>Anulaciones 25 %</h4><p>Tasa conservadora propia de la televenta de salud; el ingreso solo computa pólizas que permanecen.</p></div>
@@ -359,7 +360,7 @@
   <section id="caja">
     <div class="sec-num">Sección 05</div>
     <h2>Flujo de caja mensual</h2>
-    <p class="lead">Los gastos incluyen la base fija (8.198 €) más el incentivo variable por póliza neta. El resultado mensual pasa a positivo en el mes 4 y el acumulado se vuelve positivo en el mes 6. La tesorería nunca baja de 35.000 € gracias a la reserva inicial.</p>
+    <p class="lead"><em>Escenario realista (base).</em> Los gastos incluyen la base fija (8.198 €) más el incentivo variable por póliza neta. El resultado mensual pasa a positivo en el mes 4 y el acumulado se vuelve positivo en el mes 6. La tesorería nunca baja de 35.000 € gracias a la reserva inicial.</p>
     <div class="table-wrap">
       <table>
         <thead><tr><th>Mes</th><th class="num">Ingresos</th><th class="num">Gastos</th><th class="num">Beneficio mensual</th><th class="num">Acumulado</th><th class="num">Tesorería</th></tr></thead>
@@ -386,6 +387,9 @@
   <section id="metricas">
     <div class="sec-num">Sección 06</div>
     <h2>Métricas financieras clave</h2>
+    <p class="lead">El caso se presenta en <strong>dos escenarios</strong>: el <strong>Realista (base)</strong>, con cifras reales y conservadoras, y el <strong>Favorable</strong>, que incorpora mayor conversión, menos anulaciones y crecimiento del equipo.</p>
+
+    <h3>6.1 · Escenario Realista (base)</h3>
     <div class="grid c3">
       <div class="card"><span class="big">45.000 €</span><span class="lbl">Inversión solicitada</span></div>
       <div class="card"><span class="big">≈46 ventas/mes</span><span class="lbl">Punto de equilibrio (mes 4)</span></div>
@@ -393,6 +397,35 @@
       <div class="card"><span class="big">36.377 €</span><span class="lbl">Beneficio año 1</span></div>
       <div class="card"><span class="big">≈73.344 €</span><span class="lbl">Beneficio año 2 (run-rate sostenido)</span></div>
       <div class="card"><span class="big">35.670 €</span><span class="lbl">Tesorería mínima (mes 3)</span></div>
+    </div>
+
+    <h3 style="color:var(--accent)">6.2 · Escenario Favorable (con crecimiento)</h3>
+    <p class="lead">Supuestos: anulaciones del 20 % (18 % en el año 2), meseta de 100 ventas/mes en el año 1 y <strong>ampliación del equipo a 15 asesores</strong> en el año 2 (meseta ~150 ventas/mes).</p>
+    <div class="grid c3">
+      <div class="card"><span class="big" style="color:var(--accent)">8 meses</span><span class="lbl">Payback de la inversión</span></div>
+      <div class="card"><span class="big" style="color:var(--accent)">mes 4</span><span class="lbl">Acumulado positivo</span></div>
+      <div class="card"><span class="big" style="color:var(--accent)">91.470 €</span><span class="lbl">Beneficio año 1</span></div>
+      <div class="card"><span class="big" style="color:var(--accent)">≈220.026 €</span><span class="lbl">Beneficio año 2 (con ampliación)</span></div>
+      <div class="card"><span class="big" style="color:var(--accent)">995</span><span class="lbl">Ventas brutas año 1</span></div>
+      <div class="card"><span class="big" style="color:var(--accent)">201.786 €</span><span class="lbl">Ingreso neto año 1</span></div>
+    </div>
+
+    <h3>6.3 · Comparativa de escenarios</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Indicador</th><th class="num">Realista (base)</th><th class="num">Favorable (crecimiento)</th></tr></thead>
+        <tbody>
+          <tr><td>Anulaciones</td><td class="num">25 %</td><td class="num">20 % (18 % año 2)</td></tr>
+          <tr><td>Meseta de ventas</td><td class="num">80 brutas/mes</td><td class="num">100 → 150 brutas/mes</td></tr>
+          <tr><td>Equipo</td><td class="num">10 asesores</td><td class="num">10 → 15 asesores</td></tr>
+          <tr><td>Punto de equilibrio mensual</td><td class="num">Mes 4</td><td class="num">Mes 3</td></tr>
+          <tr><td>Acumulado positivo</td><td class="num">Mes 6</td><td class="num">Mes 4</td></tr>
+          <tr><td>Payback de la inversión</td><td class="num">14 meses</td><td class="num">8 meses</td></tr>
+          <tr><td>Ingreso neto año 1</td><td class="num">143.228 €</td><td class="num">201.786 €</td></tr>
+          <tr class="total"><td>Beneficio año 1</td><td class="num">36.377 €</td><td class="num">91.470 €</td></tr>
+          <tr class="total"><td>Beneficio año 2</td><td class="num">≈73.344 €</td><td class="num">≈220.026 €</td></tr>
+        </tbody>
+      </table>
     </div>
   </section>
 
@@ -413,7 +446,6 @@
         </tbody>
       </table>
     </div>
-    <blockquote>"La tecnología no solo automatiza procesos, sino que empodera a los equipos." — David Ruiz</blockquote>
   </section>
 
   <!-- 8. CONCLUSIÓN -->
@@ -429,8 +461,8 @@
     </ul>
     <div class="grid c3">
       <div class="card"><span class="big">45.000 €</span><span class="lbl">Inversión solicitada</span></div>
-      <div class="card"><span class="big">14 meses</span><span class="lbl">Payback de la inversión</span></div>
-      <div class="card"><span class="big">≈73.000 €</span><span class="lbl">Beneficio año 2</span></div>
+      <div class="card"><span class="big">36.377 € <span style="font-size:1rem;color:var(--accent)">/ 91.470 €</span></span><span class="lbl">Beneficio año 1 · realista / favorable</span></div>
+      <div class="card"><span class="big">≈73.344 € <span style="font-size:1rem;color:var(--accent)">/ ≈220.026 €</span></span><span class="lbl">Beneficio año 2 · realista / favorable</span></div>
     </div>
   </section>
 

@@ -102,7 +102,9 @@ El mercado español de seguros presenta factores estructurales que favorecen la 
 
 ## 4. PROYECCIÓN DE VENTAS E INGRESOS
 
-### 4.1. Supuestos del modelo
+> **Las cifras de esta sección son números reales y realistas**, calculados con supuestos conservadores de mercado. Constituyen el **Escenario Realista (base)** sobre el que se construye el caso; en la Sección 6 se añade un **Escenario Favorable con crecimiento**.
+
+### 4.1. Supuestos del modelo (escenario realista)
 El modelo es deliberadamente conservador y no asume crecimiento infinito:
 
 - **Rampa realista desde cero:** arranque lento por contratación y formación, con meseta a ~8 ventas/asesor/mes (capacidad del equipo de 10 asesores ≈ 80 ventas brutas/mes).
@@ -131,7 +133,7 @@ El modelo es deliberadamente conservador y no asume crecimiento infinito:
 ---
 
 ## 5. FLUJO DE CAJA MENSUAL
-Los gastos incluyen la base fija (8.198 €) más el incentivo variable por póliza neta (15 €). El resultado mensual pasa a positivo en el **mes 4** y el acumulado se vuelve positivo en el **mes 6**. La tesorería nunca baja de 35.000 € gracias a la reserva inicial.
+*Escenario realista (base).* Los gastos incluyen la base fija (8.198 €) más el incentivo variable por póliza neta (15 €). El resultado mensual pasa a positivo en el **mes 4** y el acumulado se vuelve positivo en el **mes 6**. La tesorería nunca baja de 35.000 € gracias a la reserva inicial.
 
 | Mes | Ingresos | Gastos | Beneficio Mensual | Beneficio Acumulado | Saldo de Tesorería |
 |---|---|---|---|---|---|
@@ -151,7 +153,10 @@ Los gastos incluyen la base fija (8.198 €) más el incentivo variable por pól
 
 ---
 
-## 6. MÉTRICAS FINANCIERAS CLAVE
+## 6. MÉTRICAS FINANCIERAS CLAVE Y ESCENARIOS
+El caso se presenta en **dos escenarios**: el **Realista (base)**, con cifras reales y conservadoras, y el **Favorable**, que incorpora mayor conversión, menos anulaciones y crecimiento del equipo.
+
+### 6.1. Escenario Realista (base)
 
 | Indicador | Valor |
 |---|---|
@@ -163,6 +168,33 @@ Los gastos incluyen la base fija (8.198 €) más el incentivo variable por pól
 | Beneficio año 1 | 36.377 € |
 | Beneficio año 2 (run-rate sostenido) | ≈73.344 € |
 | Tesorería mínima | 35.670 € (mes 3) |
+
+### 6.2. Escenario Favorable (con crecimiento)
+Supuestos: anulaciones del 20 % (18 % en el año 2), meseta de 100 ventas/mes en el año 1 y **ampliación del equipo a 15 asesores** en el año 2 (meseta ~150 ventas/mes).
+
+| Indicador | Valor |
+|---|---|
+| Payback de la inversión | 8 meses |
+| Resultado mensual positivo | Mes 3 |
+| Acumulado positivo | Mes 4 |
+| Ventas brutas año 1 | 995 |
+| Ingreso neto año 1 | 201.786 € |
+| Beneficio año 1 | 91.470 € |
+| Beneficio año 2 (con ampliación) | ≈220.026 € |
+
+### 6.3. Comparativa de escenarios
+
+| Indicador | Realista (base) | Favorable (crecimiento) |
+|---|---|---|
+| Anulaciones | 25 % | 20 % (18 % año 2) |
+| Meseta de ventas | 80 brutas/mes | 100 → 150 brutas/mes |
+| Equipo | 10 asesores | 10 → 15 asesores |
+| Punto de equilibrio mensual | Mes 4 | Mes 3 |
+| Acumulado positivo | Mes 6 | Mes 4 |
+| Payback de la inversión | 14 meses | 8 meses |
+| Ingreso neto año 1 | 143.228 € | 201.786 € |
+| **Beneficio año 1** | **36.377 €** | **91.470 €** |
+| **Beneficio año 2** | **≈73.344 €** | **≈220.026 €** |
 
 ---
 
@@ -189,9 +221,12 @@ La propuesta de **crear desde cero un Centro de Ventas DKV Famedic en Venezuela*
 - El modelo de *"socios estratégicos"* con una estructura comercial de alto rendimiento construida desde cero.
 
 > **Inversión solicitada:** 45.000 €
-> **Payback de la inversión:** 14 meses
-> **Beneficio año 1:** 36.377 €
-> **Beneficio año 2 (run-rate):** ≈73.344 €
+>
+> | | Realista (base) | Favorable (crecimiento) |
+> |---|---|---|
+> | Payback | 14 meses | 8 meses |
+> | Beneficio año 1 | 36.377 € | 91.470 € |
+> | Beneficio año 2 | ≈73.344 € | ≈220.026 € |
 
 ---
 
